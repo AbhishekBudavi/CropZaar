@@ -1,17 +1,14 @@
-import { Text, View, StyleSheet } from "react-native";
+/**
+ * app/index.tsx
+ *
+ * Entry point.  Immediately redirects to the login screen.
+ * Once you add authentication persistence (e.g. SecureStore token check),
+ * swap the redirect target to your main app screen.
+ */
+
+import { Redirect } from "expo-router";
 
 export default function Index() {
-  return (
-    <View style={styles.container}>
-      <Text>Edit src/app/index.tsx to edit this screen.</Text>
-    </View>
-  );
+  // TODO: check stored token → if valid, redirect to '/(app)/home'
+  return <Redirect href="/(auth)/Login" />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

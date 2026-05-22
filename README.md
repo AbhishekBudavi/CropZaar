@@ -1,61 +1,185 @@
-<<<<<<< HEAD
-# Welcome to your Expo app 👋
+# CropZaar - Agricultural E-Commerce Platform
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern React Native mobile application built with Expo for agricultural product trading and supply chain management.
 
-## Get started
+## 🚀 Quick Start
 
-1. Install dependencies
+### Prerequisites
+
+- Node.js 18+ installed
+- npm or yarn package manager
+- Expo CLI: `npm install -g expo-cli`
+
+### Installation
+
+1. **Install dependencies**
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. **Start the app**
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. **Run on device/emulator**
+   - Android: Press `a`
+   - iOS: Press `i`
+   - Web: Press `w`
+   - Expo Go: Scan QR code with Expo Go app
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 📋 Tech Stack
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- **Framework**: React Native with Expo 55.0.25
+- **Language**: TypeScript
+- **Routing**: Expo Router (file-based)
+- **Styling**: NativeWind 4.2.4 (Tailwind for React Native)
+- **State Management**: Context API + useReducer
+- **UI Components**: Custom components with accessibility features
 
-## Get a fresh project
+## 📁 Project Structure
 
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+src/
+├── app/                      # Expo Router screens
+│   ├── _layout.tsx          # Root layout
+│   ├── index.tsx            # App entry point
+│   └── (auth)/              # Auth route group
+│       ├── _layout.tsx      # Auth provider
+│       ├── Login.tsx        # Phone login screen
+│       └── otp.tsx          # OTP verification screen
+│
+├── components/
+│   └── ui/                  # Reusable UI components
+│       ├── Button.tsx
+│       ├── Input.tsx
+│       └── Screen.tsx
+│
+├── constants/               # Design tokens
+│   ├── colors.ts           # Color palette
+│   ├── fonts.ts            # Typography
+│   ├── spacing.ts          # Spacing scale
+│   ├── radius.ts           # Border radius
+│   ├── shadows.ts          # Shadow system
+│   └── index.ts            # Unified exports
+│
+└── features/
+    ├── auth/               # Auth feature module
+    │   ├── components/     # Auth-specific components
+    │   ├── hooks/          # Auth business logic
+    │   ├── services/       # API calls
+    │   ├── store/          # State management
+    │   ├── types/          # TypeScript types
+    │   └── constants/      # Auth constants
+    └── dashboard/          # Dashboard feature (WIP)
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🎨 Design System
 
-### Other setup steps
+CropZaar uses a centralized design token system:
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+```typescript
+import { Colors, FontSizes, spacing, BorderRadius, Shadows } from "@/constants";
 
-## Learn more
+// Usage
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: spacing.lg,
+    backgroundColor: Colors.background,
+  },
+});
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### Color Palette
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- **Primary**: Deep agri-green (#2D7A3A)
+- **Accent**: Warm orange (#F97316)
+- **Neutrals**: Full grayscale for flexibility
 
-## Join the community
+## 🔐 Authentication Flow
 
-Join our community of developers creating universal apps.
+1. **Phone Entry**: User enters Indian phone number (6-9 series)
+2. **OTP Send**: Backend generates 6-digit OTP
+3. **OTP Verification**: User enters code, system validates
+4. **Navigation**:
+   - New users → Profile setup
+   - Returning users → Home/Dashboard
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-=======
-# CropZaar
-CropZaar App using the React Native
->>>>>>> f29cc2c4d4bf71f64bdfe80fa4ae8d48837dce1b
+## 🛠️ Development
+
+### Code Quality
+
+- TypeScript for type safety
+- ESLint configuration available: `npx expo lint`
+- Consistent naming conventions
+- Clean architecture principles
+
+### Component Guidelines
+
+- Keep components focused and reusable
+- Use proper accessibility attributes
+- Implement proper error handling
+- Clean up side effects in useEffect
+
+### Testing
+
+```bash
+# Unit tests (set up with Jest)
+npm test
+
+# Linting
+npx expo lint
+```
+
+## 📚 Key Files
+
+- **Auth Service**: `src/features/auth/services/Authservice.tsx` - API integration
+- **Auth Store**: `src/features/auth/store/Authstore.tsx` - State management
+- **Auth Hooks**: `src/features/auth/hooks/` - Business logic
+- **Design Tokens**: `src/constants/` - Unified design system
+
+## 🚀 Building for Production
+
+```bash
+# Build for Android
+eas build --platform android
+
+# Build for iOS
+eas build --platform ios
+
+# Build web
+npm run web
+```
+
+## 📖 Resources
+
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Native Docs](https://reactnative.dev/)
+- [Expo Router](https://docs.expo.dev/router/introduction/)
+- [NativeWind](https://nativewind.dev/)
+
+## 🤝 Contributing
+
+1. Follow the established folder structure
+2. Use TypeScript for all new code
+3. Keep components reusable and focused
+4. Write meaningful commit messages
+5. Test on both iOS and Android
+
+## 📝 Notes
+
+- API Base URL: Set via `EXPO_PUBLIC_API_URL` environment variable
+- All design tokens are centralized in `src/constants/`
+- Auth flow includes phone validation and OTP verification
+- Responsive design for mobile-first approach
+
+## 📧 Support
+
+For issues or questions, please refer to the project documentation or reach out to the development team.
+
+---
+
+**Last Updated**: May 2026  
+**Status**: Active Development

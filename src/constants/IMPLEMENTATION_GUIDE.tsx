@@ -9,6 +9,7 @@
 // ============================================================================
 
 import { colors, radius, spacing, typography } from "@/constants/design-tokens";
+import React from "react";
 import { Pressable, Text, View } from "react-native";
 
 // ✅ GOOD - Using tokens

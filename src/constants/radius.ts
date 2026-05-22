@@ -5,7 +5,7 @@
  * Maintains visual hierarchy and consistency.
  */
 
-export const radius = {
+export const BorderRadius = {
   // No radius
   none: 0,
 
@@ -38,43 +38,43 @@ export const radius = {
 export const semanticRadius = {
   // Buttons
   button: {
-    default: radius.md, // 8px - standard buttons
-    large: radius.lg, // 12px - large buttons
-    pill: radius.full, // fully rounded
+    default: BorderRadius.md, // 8px - standard buttons
+    large: BorderRadius.lg, // 12px - large buttons
+    pill: BorderRadius.full, // fully rounded
   },
 
   // Inputs
   input: {
-    default: radius.md, // 8px - text inputs
+    default: BorderRadius.md, // 8px - text inputs
   },
 
   // Cards
   card: {
-    default: radius.lg, // 12px - standard cards
-    elevated: radius.xl, // 16px - elevated cards
+    default: BorderRadius.lg, // 12px - standard cards
+    elevated: BorderRadius.xl, // 16px - elevated cards
   },
 
   // Images
   image: {
-    thumbnail: radius.md, // 8px - small images
-    default: radius.lg, // 12px - standard images
-    large: radius.xl, // 16px - large images
+    thumbnail: BorderRadius.md, // 8px - small images
+    default: BorderRadius.lg, // 12px - standard images
+    large: BorderRadius.xl, // 16px - large images
   },
 
   // Chips/Badges
   chip: {
-    default: radius.sm, // 4px - small chips
-    large: radius.md, // 8px - large chips
-    pill: radius.full, // fully rounded
+    default: BorderRadius.sm, // 4px - small chips
+    large: BorderRadius.md, // 8px - large chips
+    pill: BorderRadius.full, // fully rounded
   },
 
   // Modals/Drawers
-  modal: radius.xl, // 16px - modal corners
+  modal: BorderRadius.xl, // 16px - modal corners
 
   // Avatars
-  avatar: radius.full, // fully rounded for circles
+  avatar: BorderRadius.full, // fully rounded for circles
 } as const;
 
 // Type exports
-export type Radius = typeof radius;
+export type BorderRadius = typeof BorderRadius;
 export type SemanticRadius = typeof semanticRadius;
