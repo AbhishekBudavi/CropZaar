@@ -13,9 +13,9 @@
  *   Using Pressable with text keeps it lightweight and easy to style.
  */
 
+import { Colors, spacing, textStyles } from "@/constants";
 import React from "react";
 import { ActivityIndicator, Pressable, Text, View } from "react-native";
-import { textStyles, Colors, spacing } from "@/constants";
 
 interface ResendButtonProps {
   resendCooldown: number;
@@ -31,11 +31,22 @@ export function ResendButton({
   onResend,
 }: ResendButtonProps) {
   return (
-    <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", marginTop: spacing.lg }}>
+    <View
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        marginTop: spacing.lg,
+      }}
+    >
       <Text style={textStyles.muted}>Didn't receive the OTP? </Text>
 
       {isResending ? (
-        <ActivityIndicator size="small" color={Colors.primary} style={{ marginLeft: spacing.xs }} />
+        <ActivityIndicator
+          size="small"
+          color={Colors.primary}
+          style={{ marginLeft: spacing.xs }}
+        />
       ) : canResend ? (
         <Pressable
           onPress={onResend}
@@ -46,7 +57,11 @@ export function ResendButton({
             <Text
               style={[
                 textStyles.label,
-                { color: Colors.primary, textDecorationLine: "underline", opacity: pressed ? 0.6 : 1 },
+                {
+                  color: Colors.primary,
+                  textDecorationLine: "underline",
+                  opacity: pressed ? 0.6 : 1,
+                },
               ]}
             >
               Resend OTP
@@ -54,9 +69,7 @@ export function ResendButton({
           )}
         </Pressable>
       ) : (
-        <Text style={textStyles.muted}>
-          Resend in {resendCooldown}s
-        </Text>
+        <Text style={textStyles.muted}>Resend in {resendCooldown}s</Text>
       )}
     </View>
   );

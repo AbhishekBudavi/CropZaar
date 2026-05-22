@@ -39,10 +39,10 @@
  * ✓ Both iOS & Android: Handled with Platform.select
  */
 
+import { Colors, spacing } from "@/constants";
 import React, { ReactNode } from "react";
 import { KeyboardAvoidingView, Platform, ScrollView, View } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { Colors, spacing } from "@/constants";
 
 interface AuthScrollContainerProps {
   children: ReactNode;
@@ -65,7 +65,10 @@ interface AuthScrollContainerProps {
  * </AuthScrollContainer>
  */
 export const AuthScrollContainer = React.memo(
-  ({ children, backgroundColor = Colors.background }: AuthScrollContainerProps) => {
+  ({
+    children,
+    backgroundColor = Colors.background,
+  }: AuthScrollContainerProps) => {
     return (
       <SafeAreaProvider style={{ backgroundColor, flex: 1 }}>
         {/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -13,8 +13,8 @@
 
 import { Button } from "@/components/ui/Button";
 import { Screen } from "@/components/ui/Screen";
+import { BorderRadius, Colors, spacing, textStyles } from "@/constants";
 import { useAuthStore } from "@/features/auth/store/Authstore";
-import { Colors, spacing, textStyles, BorderRadius } from "@/constants";
 import { router } from "expo-router";
 import React from "react";
 import { Text, View } from "react-native";
@@ -40,11 +40,28 @@ export default function HomeScreen() {
         </Text>
       </View>
 
-      <View style={{ backgroundColor: Colors.grey50, borderRadius: BorderRadius.lg, padding: spacing.lg, marginBottom: spacing.xl }}>
-        <Text style={[textStyles.bodySmall, { marginBottom: spacing.sm, fontFamily: "monospace" }]}>
+      <View
+        style={{
+          backgroundColor: Colors.grey50,
+          borderRadius: BorderRadius.lg,
+          padding: spacing.lg,
+          marginBottom: spacing.xl,
+        }}
+      >
+        <Text
+          style={[
+            textStyles.bodySmall,
+            { marginBottom: spacing.sm, fontFamily: "monospace" },
+          ]}
+        >
           Phone: {state.phone}
         </Text>
-        <Text style={[textStyles.bodySmall, { marginBottom: spacing.sm, fontFamily: "monospace" }]}>
+        <Text
+          style={[
+            textStyles.bodySmall,
+            { marginBottom: spacing.sm, fontFamily: "monospace" },
+          ]}
+        >
           Authenticated: {state.isAuthenticated ? "✓" : "✗"}
         </Text>
         <Text style={[textStyles.bodySmall, { fontFamily: "monospace" }]}>

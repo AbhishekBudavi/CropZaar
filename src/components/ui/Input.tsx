@@ -1,13 +1,13 @@
+import { Colors, inputStyles, spacing } from "@/constants";
 import React from "react";
 import {
-  Text,
-  TextInput,
-  TextInputProps,
-  TextStyle,
-  View,
-  ViewStyle,
+    Text,
+    TextInput,
+    TextInputProps,
+    TextStyle,
+    View,
+    ViewStyle,
 } from "react-native";
-import { inputStyles, Colors, spacing } from "@/constants";
 
 export interface InputProps extends Omit<TextInputProps, "style"> {
   /** Input label (floating) */
@@ -78,17 +78,13 @@ export const Input = React.forwardRef<TextInput, InputProps>(
     const height = getSizeHeight(size);
 
     return (
-      <View 
+      <View
         style={[
-          { flex: 1, marginBottom: error || helperText ? spacing.md : 0 }, 
-          containerStyle
+          { flex: 1, marginBottom: error || helperText ? spacing.md : 0 },
+          containerStyle,
         ]}
       >
-        {label && (
-          <Text style={inputStyles.label}>
-            {label}
-          </Text>
-        )}
+        {label && <Text style={inputStyles.label}>{label}</Text>}
 
         <View
           style={[
@@ -108,9 +104,11 @@ export const Input = React.forwardRef<TextInput, InputProps>(
             style={[
               inputStyles.input,
               { height: height - 16 }, // Account for padding
-              inputStyle
+              inputStyle,
             ]}
-            placeholderTextColor={placeholderTextColor || Colors.input.placeholder}
+            placeholderTextColor={
+              placeholderTextColor || Colors.input.placeholder
+            }
             editable={!disabled}
             {...textInputProps}
           />
@@ -123,19 +121,12 @@ export const Input = React.forwardRef<TextInput, InputProps>(
         </View>
 
         {error && (
-          <Text
-            style={inputStyles.error}
-            accessibilityRole="alert"
-          >
+          <Text style={inputStyles.error} accessibilityRole="alert">
             {error}
           </Text>
         )}
 
-        {helperText && (
-          <Text style={inputStyles.helperText}>
-            {helperText}
-          </Text>
-        )}
+        {helperText && <Text style={inputStyles.helperText}>{helperText}</Text>}
       </View>
     );
   },

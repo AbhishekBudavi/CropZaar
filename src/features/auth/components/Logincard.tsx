@@ -1,6 +1,6 @@
+import { authStyles, textStyles } from "@/constants";
 import React from "react";
 import { Text, View } from "react-native";
-import { authStyles, textStyles, spacing, Colors, Shadows } from "@/constants";
 import { ContinueButton } from "./ContinueButton";
 import { PhoneInput } from "./PhoneInput";
 
@@ -27,9 +27,7 @@ export function LoginCard({
       {/* Header */}
       <View style={authStyles.loginCardHeader}>
         <Text style={textStyles.heading3}>Sign In</Text>
-        <Text style={textStyles.body}>
-          Enter Your Mobile Number
-        </Text>
+        <Text style={textStyles.body}>Enter Your Mobile Number</Text>
       </View>
 
       {/* Form */}

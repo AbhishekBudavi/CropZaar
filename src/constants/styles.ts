@@ -1,9 +1,9 @@
 /**
  * Reusable Styles — React Native StyleSheet collections
- * 
+ *
  * This file exports pre-built style objects using React Native's StyleSheet.
  * Replaces Tailwind/NativeWind with performant, type-safe styling.
- * 
+ *
  * Usage:
  *   import { appStyles, buttonStyles } from '@/constants/styles';
  *   <View style={appStyles.container} />
@@ -12,10 +12,10 @@
 
 import { StyleSheet } from "react-native";
 import { Colors } from "./colors";
-import { spacing, semanticSpacing } from "./spacing";
-import { FontSizes, FontWeights, FontFamily, LineHeights } from "./fonts";
+import { FontFamily, FontSizes, FontWeights, LineHeights } from "./fonts";
 import { BorderRadius, semanticRadius } from "./radius";
 import { Shadows } from "./shadows";
+import { semanticSpacing, spacing } from "./spacing";
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // LAYOUT & CONTAINERS
@@ -25,7 +25,7 @@ export const appStyles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.background,
   },
-  
+
   container: {
     flex: 1,
     paddingHorizontal: semanticSpacing.padding.screen,
@@ -322,11 +322,19 @@ export const textStyles = StyleSheet.create({
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 export const spacingStyles = {
   padding: (value: keyof typeof spacing) => ({ padding: spacing[value] }),
-  paddingH: (value: keyof typeof spacing) => ({ paddingHorizontal: spacing[value] }),
-  paddingV: (value: keyof typeof spacing) => ({ paddingVertical: spacing[value] }),
+  paddingH: (value: keyof typeof spacing) => ({
+    paddingHorizontal: spacing[value],
+  }),
+  paddingV: (value: keyof typeof spacing) => ({
+    paddingVertical: spacing[value],
+  }),
   margin: (value: keyof typeof spacing) => ({ margin: spacing[value] }),
-  marginH: (value: keyof typeof spacing) => ({ marginHorizontal: spacing[value] }),
-  marginV: (value: keyof typeof spacing) => ({ marginVertical: spacing[value] }),
+  marginH: (value: keyof typeof spacing) => ({
+    marginHorizontal: spacing[value],
+  }),
+  marginV: (value: keyof typeof spacing) => ({
+    marginVertical: spacing[value],
+  }),
   gap: (value: keyof typeof spacing) => ({ gap: spacing[value] }),
 };
 
@@ -450,7 +458,8 @@ export const commonStyles = StyleSheet.create({
 
 // Re-export for convenience
 export * from "./colors";
-export * from "./spacing";
 export * from "./fonts";
 export * from "./radius";
 export * from "./shadows";
+export * from "./spacing";
+

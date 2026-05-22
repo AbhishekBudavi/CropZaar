@@ -12,12 +12,7 @@
 
 // ─── Direct Exports ───────────────────────────────────────────────────────
 export { Colors, type ColorKeys } from "./colors";
-export {
-  FontFamily,
-  FontSizes,
-  FontWeights,
-  LineHeights
-} from "./fonts";
+export { FontFamily, FontSizes, FontWeights, LineHeights } from "./fonts";
 export { BorderRadius, semanticRadius } from "./radius";
 export { getResponsiveSpacing, semanticSpacing, spacing } from "./spacing";
 
@@ -27,14 +22,7 @@ export type { ShadowsType } from "./shadows";
 
 // ─── StyleSheet Exports (NEW: Replaces Tailwind) ──────────────────────────
 export {
-  appStyles,
-  cardStyles,
-  buttonStyles,
-  buttonTextStyles,
-  inputStyles,
-  textStyles,
-  spacingStyles,
-  paginationStyles,
-  authStyles,
-  commonStyles,
+    appStyles, authStyles, buttonStyles,
+    buttonTextStyles, cardStyles, commonStyles, inputStyles, paginationStyles, spacingStyles, textStyles
 } from "./styles";
+

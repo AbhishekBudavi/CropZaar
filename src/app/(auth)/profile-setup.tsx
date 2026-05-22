@@ -22,8 +22,8 @@
 
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
+import { BorderRadius, Colors, spacing, textStyles } from "@/constants";
 import { AuthScrollContainer } from "@/features/auth/components/AuthScrollContainer";
-import { Colors, spacing, textStyles, BorderRadius } from "@/constants";
 import { router } from "expo-router";
 import React, { useState } from "react";
 import { Text, View } from "react-native";
@@ -59,7 +59,13 @@ export default function ProfileSetupScreen() {
   return (
     <AuthScrollContainer backgroundColor="#FFFFFF">
       {/* Header */}
-      <View style={{ marginBottom: spacing.xl, paddingHorizontal: spacing.lg, paddingTop: spacing.lg }}>
+      <View
+        style={{
+          marginBottom: spacing.xl,
+          paddingHorizontal: spacing.lg,
+          paddingTop: spacing.lg,
+        }}
+      >
         <Text style={[textStyles.heading2, { marginBottom: spacing.sm }]}>
           Complete Your Profile
         </Text>
@@ -69,7 +75,13 @@ export default function ProfileSetupScreen() {
       </View>
 
       {/* Form */}
-      <View style={{ marginBottom: spacing.xl, paddingHorizontal: spacing.lg, gap: spacing.lg }}>
+      <View
+        style={{
+          marginBottom: spacing.xl,
+          paddingHorizontal: spacing.lg,
+          gap: spacing.lg,
+        }}
+      >
         <Input
           label="Full Name"
           placeholder="Enter your full name"
@@ -91,13 +103,36 @@ export default function ProfileSetupScreen() {
 
       {/* Error Message */}
       {error && (
-        <View style={{ backgroundColor: "#FFEBEE", borderRadius: BorderRadius.lg, paddingHorizontal: spacing.md, paddingVertical: spacing.sm, marginBottom: spacing.md, marginHorizontal: spacing.lg }}>
-          <Text style={[textStyles.bodySmall, { color: "#C62828", fontWeight: "600" }]}>{error}</Text>
+        <View
+          style={{
+            backgroundColor: "#FFEBEE",
+            borderRadius: BorderRadius.lg,
+            paddingHorizontal: spacing.md,
+            paddingVertical: spacing.sm,
+            marginBottom: spacing.md,
+            marginHorizontal: spacing.lg,
+          }}
+        >
+          <Text
+            style={[
+              textStyles.bodySmall,
+              { color: "#C62828", fontWeight: "600" },
+            ]}
+          >
+            {error}
+          </Text>
         </View>
       )}
 
       {/* CTA Section */}
-      <View style={{ marginTop: "auto", paddingHorizontal: spacing.lg, paddingBottom: spacing.lg, gap: spacing.md }}>
+      <View
+        style={{
+          marginTop: "auto",
+          paddingHorizontal: spacing.lg,
+          paddingBottom: spacing.lg,
+          gap: spacing.md,
+        }}
+      >
         <Button
           label={isLoading ? "Setting up..." : "Continue"}
           variant="primary"
@@ -108,7 +143,12 @@ export default function ProfileSetupScreen() {
           onPress={handleContinue}
         />
 
-        <Text style={[textStyles.bodySmall, { textAlign: "center", color: Colors.text.muted }]}>
+        <Text
+          style={[
+            textStyles.bodySmall,
+            { textAlign: "center", color: Colors.text.muted },
+          ]}
+        >
           You can skip this for now and update later in settings
         </Text>
       </View>

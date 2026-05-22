@@ -13,14 +13,13 @@
  *   control and better accessibility on Android.
  */
 
+import { buttonStyles, buttonTextStyles } from "@/constants";
 import React from "react";
 import {
   ActivityIndicator,
   Pressable,
-  Text,
-  type PressableStateCallbackType,
+  Text
 } from "react-native";
-import { buttonStyles, buttonTextStyles, Colors } from "@/constants";
 
 interface ContinueButtonProps {
   onPress: () => void;
@@ -55,9 +54,7 @@ export function ContinueButton({
           accessibilityLabel="Loading"
         />
       ) : (
-        <Text style={buttonTextStyles.primary}>
-          {label}
-        </Text>
+        <Text style={buttonTextStyles.primary}>{label}</Text>
       )}
     </Pressable>
   );
